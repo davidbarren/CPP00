@@ -6,13 +6,14 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:41:12 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/06/26 15:42:47 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/07/01 00:12:55 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CONTACT_HPP
 #define CONTACT_HPP
 #include <string>
+#include <iostream>
 
 class Contact
 {

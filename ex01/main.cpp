@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 03:57:30 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/06/30 19:03:39 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/07/01 00:37:56 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ int	main(void)
 {
 	std::string input;
 	PhoneBook phonebook;
+	Contact contact;
 	show_instructions();
-	while (getline(std::cin, input))
+	while (std::getline(std::cin, input))
 	{
 //		if (!input.compare("TRUNCATE THIS STRING PLEASE"))
 //		{
@@ -43,7 +44,8 @@ int	main(void)
 //			std::cout << input << std::endl;
 //		}
 		if (!input.compare("ADD"))
-			std::cout << "Add function here" << std::endl;
+			phonebook.add_contact(contact);
+//			std::cout << "Add function here" << std::endl;
 		else if (!input.compare("SEARCH"))
 			std::cout << "Search function here" << std::endl;
 		else if (!input.compare("EXIT"))
