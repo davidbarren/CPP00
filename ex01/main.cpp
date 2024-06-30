@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 03:57:30 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/06/27 04:01:57 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/06/30 19:03:39 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,18 @@ std::string	truncate(std::string& str)
 		return (str);
 }
 
+void	show_instructions(void)
+{
+	std::cout << "Welcome to the Awesome PhoneBook!" << std::endl;
+	std::cout << "Please ADD or SEARCH for a contact" << std::endl;
+	std::cout << "You can also EXIT (all data will be lost)" << std::endl;
+}
+
 int	main(void)
 {
 	std::string input;
 	PhoneBook phonebook;
+	show_instructions();
 	while (getline(std::cin, input))
 	{
 //		if (!input.compare("TRUNCATE THIS STRING PLEASE"))
@@ -45,3 +53,4 @@ int	main(void)
 	}
 	return (0);
 }
+
