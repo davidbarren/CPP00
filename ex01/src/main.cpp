@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 03:57:30 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/07/29 16:53:24 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/02 01:04:51 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(void)
 					phonebook.display_specific_contact(contact, phonebook, index);
 				else
 					std::cout << "invalid index please try to SEARCH again" << std::endl;}
-			catch (std::invalid_argument){
+			catch (const std::exception& ex){
 				std::cout << "invalid index please try to SEARCH again" << std::endl;
 			}
 		}

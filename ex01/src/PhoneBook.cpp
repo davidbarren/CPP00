@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:40:54 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/07/29 16:03:19 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/02 01:14:05 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void PhoneBook::add_contact(Contact &contact, PhoneBook &Phonebook)
 		std::cout << "Contact Fields Must Contain Something Please try to ADD again" << std::endl;
 		return ;
 	}
-	std::cout << "contact added at index:" << index << std::endl;
 	std::cout << "Contact added succesfully" << std::endl;
 	update_array(contact, Phonebook, index);
 	Phonebook.index = index;
