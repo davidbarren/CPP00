@@ -6,7 +6,7 @@
 #    By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 03:46:13 by dbarrene          #+#    #+#              #
-#    Updated: 2024/07/29 12:40:44 by dbarrene         ###   ########.fr        #
+#    Updated: 2024/08/02 17:08:35 by dbarrene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Awesome_Phonebook
 
 COMP = c++
 
-COMPFLAGS = -Wall -Wextra #-Werror
+COMPFLAGS = -Wall -Wextra -Werror
 
 SRCDIR = src
 OBJDIR = obj
