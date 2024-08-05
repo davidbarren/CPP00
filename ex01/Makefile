@@ -6,7 +6,7 @@
 #    By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 03:46:13 by dbarrene          #+#    #+#              #
-#    Updated: 2024/08/02 17:08:35 by dbarrene         ###   ########.fr        #
+#    Updated: 2024/08/05 22:23:51 by dbarrene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ COMP = c++
 
 COMPFLAGS = -Wall -Wextra -Werror
 
-SRCDIR = src
+SRCDIR = srcs
 OBJDIR = obj
 SRCS = $(SRCDIR)/main.cpp\
 	   $(SRCDIR)/PhoneBook.cpp\
@@ -42,7 +42,7 @@ clean:
 	@rm -f $(OBJS)
 	@rm -rf $(OBJDIR)
 fclean: clean
-	@rm $(NAME)
+	@rm -f $(NAME)
 	@echo "Removing $(NAME)"
 re: fclean all
 	

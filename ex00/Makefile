@@ -6,7 +6,7 @@
 #    By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 03:46:13 by dbarrene          #+#    #+#              #
-#    Updated: 2024/06/26 04:38:17 by dbarrene         ###   ########.fr        #
+#    Updated: 2024/08/05 22:23:28 by dbarrene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,31 @@ COMP = c++
 
 COMPFLAGS = -Wall -Wextra -Werror
 
-SRCS = megaphone.cpp
-OBJS = $(patsubst %.cpp, %.o, $(SRCS))
+SRCDIR = srcs
+OBJDIR = obj
+SRCS = $(SRCDIR)/megaphone.cpp\
+
+OBJS = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 
 all: $(NAME)
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	@$(COMP) $(COMPFLAGS) -c $< -o $@
+
 $(NAME): $(OBJDIR) $(OBJS)
-#	@echo "$(NAME) is being compiled :)"
 	@$(COMP) $(COMPFLAGS) $(OBJS) -o $(NAME)
+	@echo "Compiling $(NAME)"
+	@echo "Compilation finished :)"
+
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
+
 clean:
 	@echo "Removing objects"
 	@rm -f $(OBJS)
+	@rm -rf $(OBJDIR)
 fclean: clean
+	@rm -f $(NAME)
 	@echo "Removing $(NAME)"
-	@rm $(NAME)
+re: fclean all
+	
