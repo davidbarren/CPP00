@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:40:54 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/02 01:14:05 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/06 15:41:08 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int	verify_contact(Contact contact)
 		rv = 1;
 	return (rv);
 }
+
+PhoneBook::PhoneBook(): index(-1){
+}
+
 void PhoneBook::add_contact(Contact &contact, PhoneBook &Phonebook)
 {
 	static int	index;
@@ -76,7 +80,7 @@ void PhoneBook::add_contact(Contact &contact, PhoneBook &Phonebook)
 	}
 	std::cout << "Contact added succesfully" << std::endl;
 	update_array(contact, Phonebook, index);
-	Phonebook.index = index;
+	Phonebook.set_index(index);
 	index++;
 	if (index >= CONTACT_MAX)
 		index %= CONTACT_MAX;
@@ -94,9 +98,11 @@ void PhoneBook::display_contacts(Contact contact, PhoneBook Phonebook)
 		if (Phonebook.contacts[i].index != -1)
 		{
 		contact = Phonebook.contacts[i];
-	std::cout << std::right << std::setw(10) << truncate(contact.get_index()) << "|"
-		<< truncate(contact.get_first_name()) << "|" << truncate (contact.get_last_name()) << "|" <<
-		contact.get_nickname() << std::endl;
+		std::cout << std::right << std::setw(10) << truncate(contact.get_index()) << "|";
+		std::cout << std::right << std::setw(10) << truncate(contact.get_first_name()) << "|" ;
+		std::cout << std::right << std::setw(10) << truncate(contact.get_last_name()) << "|";
+		std::cout << std::right << std::setw(10) << truncate(contact.get_nickname()) << "|";
+		std::cout << std::endl;
 		}
 	}
 }
@@ -108,4 +114,10 @@ void PhoneBook::display_specific_contact(Contact contact, PhoneBook& Phonebook, 
 	std::cout << contact.get_nickname() << std::endl;
 	std::cout << contact.get_phone_num() << std::endl;
 	std::cout << contact.get_secret() << std::endl;
+}
+
+void PhoneBook::set_index(int newindex){
+	if (index == CONTACT_MAX - 1)
+		return ;
+	index = newindex;
 }

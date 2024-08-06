@@ -6,11 +6,18 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:41:04 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/02 01:13:25 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/06 15:29:38 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Contact.hpp"
+
+
+Contact::Contact():index(-1){
+}
+
+Contact::~Contact(){
+}
 
 void	Contact::set_first_name(std::string& first_name)
 {
